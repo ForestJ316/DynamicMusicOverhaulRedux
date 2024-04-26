@@ -1,0 +1,375 @@
+{
+  "modName": "DynamicCombatMusic",
+  "displayName": "Dynamic Combat Music",
+  "minMcmVersion": 1,
+  "pluginRequirements": ["DynamicCombatMusic.esp"],
+  "content": [
+    {
+      "text": "<p align='center'><font size='30'>Dynamic Combat Music</font></p>",
+      "type": "text",
+      "html": true
+    },
+    {
+      "text": "Main Settings",
+      "type": "section"
+    },
+    {
+      "id": "bEnabled:General",
+      "text": "Mod Enabled",
+      "type": "switcher",
+      "help": "Controls whether Dynamic Combat Music is enabled.",
+      "groupControl": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    { "type": "spacer" },
+    {
+      "text": "Enemy Settings",
+      "type": "section",
+      "groupCondition": 1
+    },
+    {
+      "text": "Choose which Enemies should play Combat Music.",
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "text": "<i>If you don't own the DLC the setting will be ignored.</i>",
+      "type": "text",
+      "html": true,
+      "groupCondition": 1
+    },
+    {
+      "text": "<p align='center'><font size='24'><b>- Main Game and Automatron DLC -</b></font></p>",
+      "html": true,
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "id": "bHuman:Enemies",
+      "text": "Humans",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bSuperMutant:Enemies",
+      "text": "Super Mutants",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bBehemoth:Enemies",
+      "text": "Behemoths",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bGhoul:Enemies",
+      "text": "Ghouls",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "<p align='center'><i>Creatures</i></p>",
+      "html": true,
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "id": "bMolerat:Enemies",
+      "text": "Molerats",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bBloodbug:Enemies",
+      "text": "Bloodbugs",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRadroach:Enemies",
+      "text": "Radroaches",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bStingwing:Enemies",
+      "text": "Stingwings",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRadscorpion:Enemies",
+      "text": "Radscorpions",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRadstag:Enemies",
+      "text": "Radstags",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bYaoGuai:Enemies",
+      "text": "Yao Guai",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bBrahmin:Enemies",
+      "text": "Brahmin",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bDeathclaw:Enemies",
+      "text": "Deathclaw",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bDog:Enemies",
+      "text": "Dogs",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bMirelurk:Enemies",
+      "text": "Mirelurks",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "<p align='center'><i>Robots</i></p>",
+      "html": true,
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "id": "bAssaultron:Enemies",
+      "text": "Assaultrons",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bProtectron:Enemies",
+      "text": "Protectrons",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bSentryBot:Enemies",
+      "text": "Sentry Bots",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bMrHandy:Enemies",
+      "text": "Mr Handy",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRobobrain:Enemies",
+      "text": "Robobrains",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bEyebot:Enemies",
+      "text": "Eyebots",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },   
+    {
+      "id": "bTurret:Enemies",
+      "text": "Turrets",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bSynth:Enemies",
+      "text": "Synths",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "<p align='center'><font size='24'><b>- Far Harbor DLC -</b></font></p>",
+      "html": true,
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "id": "bAngler:Enemies",
+      "text": "Anglers",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bFogCrawler:Enemies",
+      "text": "Fog Crawlers",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bHermitCrab:Enemies",
+      "text": "Hermit Crabs",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bGulper:Enemies",
+      "text": "Gulpers",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "text": "<p align='center'><font size='24'><b>- Nuka-World DLC -</b></font></p>",
+      "html": true,
+      "type": "text",
+      "groupCondition": 1
+    },
+    {
+      "id": "bBloodworm:Enemies",
+      "text": "Bloodworms",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bCaveCricket:Enemies",
+      "text": "Cave Crickets",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRadRat:Enemies",
+      "text": "Rad Rats",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bRadAnt:Enemies",
+      "text": "Rad Ants",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bGatorclaw:Enemies",
+      "text": "Gatorclaws",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "id": "bGorilla:Enemies",
+      "text": "Gorillas",
+      "type": "switcher",
+      "groupCondition": 1,
+      "valueOptions": {
+        "sourceType": "ModSettingBool"
+      }
+    },
+    {
+      "type": "spacer",
+      "groupCondition": 1
+    }
+  ]
+}
