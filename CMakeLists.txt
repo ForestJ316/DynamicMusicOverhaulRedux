@@ -32,7 +32,7 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL" CACHE 
 # ---- Project ----
 
 project(
-	DynamicMusicRedux
+	DynamicCombatMusic
 	VERSION 1.0.0
 	LANGUAGES CXX
 )
