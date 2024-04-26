@@ -1,0 +1,630 @@
+{
+  "modName": "DynamicMusicOverhaulRedux",
+  "displayName": "Dynamic Music Overhaul Redux",
+  "minMcmVersion": 1,
+  "pluginRequirements": ["DynamicMusicOverhaulRedux.esp"],
+  "content": [
+    {
+      "type": "spacer",
+      "numLines": 6
+    },
+    {
+      "text": "<p align='center'><font size='70'>Dynamic Music Overhaul Redux</font></p>",
+      "type": "text",
+      "html": true
+    },
+    { "type": "spacer" }
+  ],
+  "pages": [
+    {
+      "pageDisplayName": "Combat Settings",
+      "content":[
+        {
+          "text": "Combat Settings",
+          "type": "section"
+        },
+        {
+          "text": "Choose which Enemies should play Combat Music.",
+          "type": "text"
+        },
+        {
+          "text": "<i>If you don't own the DLC the setting will be ignored.</i>",
+          "type": "text",
+          "html": true
+        },
+        {
+          "id": "bCombatEnabled:General",
+          "text": "Mod Enabled for Combat",
+          "type": "switcher",
+          "help": "Controls whether Dynamic Music Overhaul Redux is enabled for Combat.",
+          "groupControl": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        { "type": "spacer" },
+        {
+          "text": "<p align='center'><font size='24'><b>- Main Game and Automatron DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bHuman:Enemies",
+          "text": "Humans",
+          "type": "switcher",
+          "help": "Enable combat music for Humans.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bSuperMutant:Enemies",
+          "text": "Super Mutants",
+          "type": "switcher",
+          "help": "Enable combat music for Super Mutants.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bBehemoth:Enemies",
+          "text": "Behemoths",
+          "type": "switcher",
+          "help": "Enable combat music for Behemoths.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bGhoul:Enemies",
+          "text": "Ghouls",
+          "type": "switcher",
+          "help": "Enable combat music for Ghouls and Feral Ghouls.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><i>Creatures</i></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bMolerat:Enemies",
+          "text": "Molerats",
+          "type": "switcher",
+          "help": "Enable combat music for Molerats.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bBloodbug:Enemies",
+          "text": "Bloodbugs",
+          "type": "switcher",
+          "help": "Enable combat music for Bloodbugs.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRadroach:Enemies",
+          "text": "Radroaches",
+          "type": "switcher",
+          "help": "Enable combat music for Radroaches.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bStingwing:Enemies",
+          "text": "Stingwings",
+          "type": "switcher",
+          "help": "Enable combat music for Stingwings.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRadscorpion:Enemies",
+          "text": "Radscorpions",
+          "type": "switcher",
+          "help": "Enable combat music for Radscorpions.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRadstag:Enemies",
+          "text": "Radstags",
+          "type": "switcher",
+          "help": "Enable combat music for Radstags.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bYaoGuai:Enemies",
+          "text": "Yao Guai",
+          "type": "switcher",
+          "help": "Enable combat music for Yao Guai.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bBrahmin:Enemies",
+          "text": "Brahmin",
+          "type": "switcher",
+          "help": "Enable combat music for Brahmin.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bDeathclaw:Enemies",
+          "text": "Deathclaw",
+          "type": "switcher",
+          "help": "Enable combat music for Deathclaws.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bDog:Enemies",
+          "text": "Dogs",
+          "type": "switcher",
+          "help": "Enable combat music for Dogs. Includes Mutant Hounds and Far Harbor Wolves.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bMirelurk:Enemies",
+          "text": "Mirelurks",
+          "type": "switcher",
+          "help": "Enable combat music for Milelurks.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><i>Robots</i></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAssaultron:Enemies",
+          "text": "Assaultrons",
+          "type": "switcher",
+          "help": "Enable combat music for Assaultrons.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bProtectron:Enemies",
+          "text": "Protectrons",
+          "type": "switcher",
+          "help": "Enable combat music for Protectrons.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bSentryBot:Enemies",
+          "text": "Sentry Bots",
+          "type": "switcher",
+          "help": "Enable combat music for Sentry Bots.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bMrHandy:Enemies",
+          "text": "Mr Handy",
+          "type": "switcher",
+          "help": "Enable combat music for Mr Handy.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRobobrain:Enemies",
+          "text": "Robobrains",
+          "type": "switcher",
+          "help": "Enable combat music for Robobrains.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bEyebot:Enemies",
+          "text": "Eyebots",
+          "type": "switcher",
+          "help": "Enable combat music for Eyebots.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },   
+        {
+          "id": "bTurret:Enemies",
+          "text": "Turrets",
+          "type": "switcher",
+          "help": "Enable combat music for Turrets.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bSynth:Enemies",
+          "text": "Synths",
+          "type": "switcher",
+          "help": "Enable combat music for Synths.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><font size='24'><b>- Far Harbor DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAngler:Enemies",
+          "text": "Anglers",
+          "type": "switcher",
+          "help": "Enable combat music for Anglers.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bFogCrawler:Enemies",
+          "text": "Fog Crawlers",
+          "type": "switcher",
+          "help": "Enable combat music for Fog Crawlers.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bHermitCrab:Enemies",
+          "text": "Hermit Crabs",
+          "type": "switcher",
+          "help": "Enable combat music for Hermit Crabs.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bGulper:Enemies",
+          "text": "Gulpers",
+          "type": "switcher",
+          "help": "Enable combat music for Gulpers.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><font size='24'><b>- Nuka-World DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bBloodworm:Enemies",
+          "text": "Bloodworms",
+          "type": "switcher",
+          "help": "Enable combat music for Bloodworms.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bCaveCricket:Enemies",
+          "text": "Cave Crickets",
+          "type": "switcher",
+          "help": "Enable combat music for Cave Crickets.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRadRat:Enemies",
+          "text": "Rad Rats",
+          "type": "switcher",
+          "help": "Enable combat music for Rad Rats.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bRadAnt:Enemies",
+          "text": "Rad Ants",
+          "type": "switcher",
+          "help": "Enable combat music for Rad Ants.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bGatorclaw:Enemies",
+          "text": "Gatorclaws",
+          "type": "switcher",
+          "help": "Enable combat music for Gatorclaws.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bGorilla:Enemies",
+          "text": "Gorillas",
+          "type": "switcher",
+          "help": "Enable combat music for Gorillas.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "type": "spacer",
+          "groupCondition": 1
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Ambience Settings",
+      "content": [
+        {
+          "text": "Ambience Settings",
+          "type": "section"
+        },
+        {
+          "text": "Control where you want to play Ambience Music.",
+          "type": "text"
+        },
+        {
+          "text": "<i>If you don't own the DLC the setting will be ignored.</i>",
+          "type": "text",
+          "html": true
+        },
+        {
+          "id": "bAmbienceEnabled:General",
+          "text": "Mod Enabled for Ambience",
+          "type": "switcher",
+          "help": "Controls whether Dynamic Music Overhaul Redux is enabled for Ambience.",
+          "groupControl": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        { "type": "spacer" },
+        {
+          "text": "<p align='center'><font size='24'><b>- Main Game -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAmbienceExplore:Ambience",
+          "text": "Exploration and Exteriors",
+          "type": "switcher",
+          "help": "Enable Exploration and Exterior related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceGlowingSea:Ambience",
+          "text": "Glowing Sea",
+          "type": "switcher",
+          "help": "Enable Glowing Sea related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDungeon:Ambience",
+          "text": "Dungeons and Interiors",
+          "type": "switcher",
+          "help": "Enable Dungeon and Interior related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceInstitute:Ambience",
+          "text": "Institute",
+          "type": "switcher",
+          "help": "Enable Insitute faction related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceBrotherhood:Ambience",
+          "text": "Brotherhood of Steel",
+          "type": "switcher",
+          "help": "Enable Brotherhood of Steel faction related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceRailroad:Ambience",
+          "text": "Railroad",
+          "type": "switcher",
+          "help": "Enable Railroad faction related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceMinutemen:Ambience",
+          "text": "Minutemen",
+          "type": "switcher",
+          "help": "Enable Minutemen faction related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },        
+        {
+          "text": "<p align='center'><font size='24'><b>- Automatron DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAmbienceDLC01Dungeon:Ambience",
+          "text": "The Mechanist's lair",
+          "type": "switcher",
+          "help": "Enable The Mechanist's lair related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><font size='24'><b>- Far Harbor DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAmbienceDLC03Explore:Ambience",
+          "text": "Far Harbor General Ambience",
+          "type": "switcher",
+          "help": "Enable Far Harbor related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC03ChildrenOfAtom:Ambience",
+          "text": "Children of Atom",
+          "type": "switcher",
+          "help": "Enable Children of Atom faction related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<p align='center'><font size='24'><b>- Nuka-World DLC -</b></font></p>",
+          "html": true,
+          "type": "text",
+          "groupCondition": 1
+        },
+        {
+          "id": "bAmbienceDLC04Explore:Ambience",
+          "text": "Nuka-World General Ambience",
+          "type": "switcher",
+          "help": "Enable Nuka-World related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC04ExploreWestern:Ambience",
+          "text": "Dry Rock Gulch",
+          "type": "switcher",
+          "help": "Enable Nuka-World Dry Rock Gulch related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC04ExploreGalactic:Ambience",
+          "text": "Galactic Zone",
+          "type": "switcher",
+          "help": "Enable Nuka-World Galactic Zone related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC04ExploreSafari:Ambience",
+          "text": "Safari Adventure",
+          "type": "switcher",
+          "help": "Enable Nuka-World Safari Adventure related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC04ExploreKiddie:Ambience",
+          "text": "Kiddie Kingdom",
+          "type": "switcher",
+          "help": "Enable Nuka-World Kiddie Kingdom related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bAmbienceDLC04ExploreNukaTown:Ambience",
+          "text": "Nuka-Town USA",
+          "type": "switcher",
+          "help": "Enable Nuka-World Nuka-Town USA related ambience.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "type": "spacer",
+          "groupCondition": 1
+        }
+      ]
+    }
+  ]
+}
