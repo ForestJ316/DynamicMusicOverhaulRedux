@@ -18,7 +18,6 @@ public:
 	}
 
 private:
-
 	static bool CanPlayCombatMusic(__int64* combatManager)
 	{
 		bool shouldPlay = OriginalShouldPlayCombatMusic(combatManager);
