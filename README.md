@@ -10,8 +10,8 @@
 
 ## Building
 ```
-git clone https://github.com/ForestJ316/DisableLevelUpHealing
-cd DisableLevelUpHealing
+git clone https://github.com/ForestJ316/DynamicMusicOverhaulRedux
+cd DynamicMusicOverhaulRedux
 
 cmake --preset vs2022-windows-vcpkg
 cmake --build build --config Release
