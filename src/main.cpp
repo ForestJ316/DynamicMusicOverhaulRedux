@@ -1,5 +1,6 @@
 #include "Hooks.h"
 #include "Papyrus.h"
+#include "Settings.h"
 #include "Events.h"
 #include "FormHandler.h"
 
@@ -39,6 +40,7 @@ namespace
 		{
 			case F4SE::MessagingInterface::kGameDataReady:
 				logger::info("{:*^50}", "GAME DATA READY"sv);
+				Settings::ReadIniSettings();
 				Events::Install();
 				FormHandler::InitializeForms();
 				logger::info("{:*^50}", ""sv);

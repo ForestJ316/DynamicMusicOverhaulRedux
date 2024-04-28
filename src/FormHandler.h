@@ -12,7 +12,12 @@ public:
 	}
 
 	static void InitializeForms();
+	void InitializeRaces();
+	void InitializeAmbience();
 	
+	// Silent Track
+	RE::BGSMusicType* silentTrack;
+
 private:
 	struct Races
 	{
@@ -85,6 +90,52 @@ private:
 		RE::TESRace* dlc04Gorilla;
 	};
 	void MapRaces(Races& races);
+	
+	struct Ambience
+	{
+		// Factions
+		// -- Fallout4.esm --
+		RE::BGSMusicType* factionInstitute;
+		RE::BGSMusicType* factionBrotherhood;
+		RE::BGSMusicType* factionRailroad;
+		RE::BGSMusicType* factionMinutemen;
+		// -- DLCCoast.esm --
+		RE::BGSMusicType* dlc03FactionChildrenOfAtom;
+		RE::BGSMusicType* dlc03FactionChildrenOfAtomNucleus;
+
+		// Dungeons and Interiors
+		// -- Fallout4.esm --
+		RE::BGSMusicType* dungeonA;
+		RE::BGSMusicType* dungeonB;
+		RE::BGSMusicType* dungeonC;
+		RE::BGSMusicType* dungeonVault111;
+		// -- DLCRobot.esm --
+		RE::BGSMusicType* dlc01DungeonMechanistLair;
+
+		// Exploration and Exteriors
+		// -- Fallout4.esm --
+		RE::BGSMusicType* exploreRegular;
+		RE::BGSMusicType* publicOutside;
+		RE::BGSMusicType* exploreUrban;
+		RE::BGSMusicType* exploreFoothills;
+		RE::BGSMusicType* exploreFoothillsSanctuary;
+		RE::BGSMusicType* exploreCoast;
+		RE::BGSMusicType* exploreCoastAirport;
+		RE::BGSMusicType* exploreGlowingSea;
+		// -- DLCCoast.esm --
+		RE::BGSMusicType* dlc03Explore;
+		// -- DLCNukaWorld.esm --
+		RE::BGSMusicType* dlc04ExploreOuter;
+		RE::BGSMusicType* dlc04ExploreInner;
+		RE::BGSMusicType* dlc04ExploreInnerWestern;
+		RE::BGSMusicType* dlc04ExploreInnerGalactic;
+		RE::BGSMusicType* dlc04ExploreInnerSafari;
+		RE::BGSMusicType* dlc04ExploreInnerKiddie;
+		RE::BGSMusicType* dlc04ExploreInnerNukaTown;
+	};
+	void MapAmbience(Ambience& ambience);
+	
 public:
 	std::unordered_map<RE::TESRace*, bool&> EnemySettings;
+	std::unordered_map<RE::BGSMusicType*, bool&> AmbienceSettings;
 };

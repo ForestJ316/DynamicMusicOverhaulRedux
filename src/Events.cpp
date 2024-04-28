@@ -16,7 +16,7 @@ namespace Events
 
 	CombatEvent::EventResult CombatEvent::ProcessEvent(const TESCombatEvent& a_event, RE::BSTEventSource<TESCombatEvent>*)
 	{
-		if (!Settings::bModEnabled)
+		if (!Settings::bCombatEnabled)
 			return CombatEvent::EventResult::kContinue;
 
 		if (a_event.sourceActor && a_event.targetActor && a_event.newState)

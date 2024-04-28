@@ -11,7 +11,8 @@ namespace Papyrus
 
 	void PlayerCombatEnded(std::monostate)
 	{
-		Events::CombatEvent::GetSingleton()->OnCombatFinished();
+		if (Settings::bCombatEnabled)
+			Events::CombatEvent::GetSingleton()->OnCombatFinished();
 	}
 
 	bool RegisterFunctions(RE::BSScript::IVirtualMachine* a_vm)

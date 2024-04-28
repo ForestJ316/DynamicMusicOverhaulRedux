@@ -1,10 +1,11 @@
 #include "Settings.h"
 #include "Events.h"
+#include "Hooks.h"
 
 void Settings::ReadIniSettings()
 {
-	constexpr auto defaultini_path = L"Data/MCM/Config/DynamicCombatMusic/settings.ini";
-	constexpr auto userini_path = L"Data/MCM/Settings/DynamicCombatMusic.ini";
+	constexpr auto defaultini_path = L"Data/MCM/Config/DynamicMusicOverhaulRedux/settings.ini";
+	constexpr auto userini_path = L"Data/MCM/Settings/DynamicMusicOverhaulRedux.ini";
 
 	const auto ReadSettingsIni = [&](std::filesystem::path path) {
 		CSimpleIniA ini;
@@ -12,7 +13,9 @@ void Settings::ReadIniSettings()
 		ini.LoadFile(path.string().c_str());
 
 		// General
-		ReadBoolSetting(ini, "General", "bEnabled", bModEnabled);
+		ReadBoolSetting(ini, "General", "bCombatEnabled", bCombatEnabled);
+		ReadBoolSetting(ini, "General", "bAmbienceEnabled", bAmbienceEnabled);
+
 		// Enemies
 		// -- Fallout4.esm + DLCRobot.esm --
 		// Humanoids
@@ -53,12 +56,34 @@ void Settings::ReadIniSettings()
 		ReadBoolSetting(ini, "Enemies", "bRadAnt", bRadAnt);
 		ReadBoolSetting(ini, "Enemies", "bGatorclaw", bGatorclaw);
 		ReadBoolSetting(ini, "Enemies", "bGorilla", bGorilla);
+
+		// Ambience
+		// -- Fallout4.esm --
+		ReadBoolSetting(ini, "Ambience", "bAmbienceInstitute", bAmbienceInstitute);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceBrotherhood", bAmbienceBrotherhood);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceRailroad", bAmbienceRailroad);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceMinutemen", bAmbienceMinutemen);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDungeon", bAmbienceDungeon);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceExplore", bAmbienceExplore);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceGlowingSea", bAmbienceGlowingSea);
+		// -- DLCRobot.esm --
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC01Dungeon", bAmbienceDLC01Dungeon);
+		// -- DLCCoast.esm --
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC03ChildrenOfAtom", bAmbienceDLC03ChildrenOfAtom);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC03Explore", bAmbienceDLC03Explore);
+		// -- DLCNukaWorld.esm --
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04Explore", bAmbienceDLC04Explore);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreWestern", bAmbienceDLC04ExploreWestern);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreGalactic", bAmbienceDLC04ExploreGalactic);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreSafari", bAmbienceDLC04ExploreSafari);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreKiddie", bAmbienceDLC04ExploreKiddie);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreNukaTown", bAmbienceDLC04ExploreNukaTown);
 	};
 	// Read Defaults first
 	ReadSettingsIni(defaultini_path);
 	ReadSettingsIni(userini_path);
 
-	if (RE::PlayerCharacter::GetSingleton()->IsInCombat() && bModEnabled)
+	if (RE::PlayerCharacter::GetSingleton()->IsInCombat() && bCombatEnabled)
 		Events::CombatEvent::GetSingleton()->UpdateCombatants();
 }
 
