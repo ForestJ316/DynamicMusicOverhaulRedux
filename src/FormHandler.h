@@ -93,25 +93,6 @@ private:
 	
 	struct Ambience
 	{
-		// Factions
-		// -- Fallout4.esm --
-		RE::BGSMusicType* factionInstitute;
-		RE::BGSMusicType* factionBrotherhood;
-		RE::BGSMusicType* factionRailroad;
-		RE::BGSMusicType* factionMinutemen;
-		// -- DLCCoast.esm --
-		RE::BGSMusicType* dlc03FactionChildrenOfAtom;
-		RE::BGSMusicType* dlc03FactionChildrenOfAtomNucleus;
-
-		// Dungeons and Interiors
-		// -- Fallout4.esm --
-		RE::BGSMusicType* dungeonA;
-		RE::BGSMusicType* dungeonB;
-		RE::BGSMusicType* dungeonC;
-		RE::BGSMusicType* dungeonVault111;
-		// -- DLCRobot.esm --
-		RE::BGSMusicType* dlc01DungeonMechanistLair;
-
 		// Exploration and Exteriors
 		// -- Fallout4.esm --
 		RE::BGSMusicType* exploreRegular;
@@ -132,6 +113,25 @@ private:
 		RE::BGSMusicType* dlc04ExploreInnerSafari;
 		RE::BGSMusicType* dlc04ExploreInnerKiddie;
 		RE::BGSMusicType* dlc04ExploreInnerNukaTown;
+
+		// Dungeons and Interiors
+		// -- Fallout4.esm --
+		RE::BGSMusicType* dungeonA;
+		RE::BGSMusicType* dungeonB;
+		RE::BGSMusicType* dungeonC;
+		RE::BGSMusicType* dungeonVault111;
+		// -- DLCRobot.esm --
+		RE::BGSMusicType* dlc01DungeonMechanistLair;
+
+		// Factions
+		// -- Fallout4.esm --
+		RE::BGSMusicType* factionInstitute;
+		RE::BGSMusicType* factionBrotherhood;
+		RE::BGSMusicType* factionRailroad;
+		RE::BGSMusicType* factionMinutemen;
+		// -- DLCCoast.esm --
+		RE::BGSMusicType* dlc03FactionChildrenOfAtom;
+		RE::BGSMusicType* dlc03FactionChildrenOfAtomNucleus;
 	};
 	void MapAmbience(Ambience& ambience);
 	

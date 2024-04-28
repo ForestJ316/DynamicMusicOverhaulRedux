@@ -59,18 +59,18 @@ void Settings::ReadIniSettings()
 
 		// Ambience
 		// -- Fallout4.esm --
+		ReadBoolSetting(ini, "Ambience", "bAmbienceExplore", bAmbienceExplore);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceGlowingSea", bAmbienceGlowingSea);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDungeon", bAmbienceDungeon);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceInstitute", bAmbienceInstitute);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceBrotherhood", bAmbienceBrotherhood);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceRailroad", bAmbienceRailroad);
-		ReadBoolSetting(ini, "Ambience", "bAmbienceMinutemen", bAmbienceMinutemen);
-		ReadBoolSetting(ini, "Ambience", "bAmbienceDungeon", bAmbienceDungeon);
-		ReadBoolSetting(ini, "Ambience", "bAmbienceExplore", bAmbienceExplore);
-		ReadBoolSetting(ini, "Ambience", "bAmbienceGlowingSea", bAmbienceGlowingSea);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceMinutemen", bAmbienceMinutemen);		
 		// -- DLCRobot.esm --
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC01Dungeon", bAmbienceDLC01Dungeon);
 		// -- DLCCoast.esm --
-		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC03ChildrenOfAtom", bAmbienceDLC03ChildrenOfAtom);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC03Explore", bAmbienceDLC03Explore);
+		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC03ChildrenOfAtom", bAmbienceDLC03ChildrenOfAtom);
 		// -- DLCNukaWorld.esm --
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04Explore", bAmbienceDLC04Explore);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreWestern", bAmbienceDLC04ExploreWestern);

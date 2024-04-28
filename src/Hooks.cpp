@@ -33,6 +33,11 @@ void Hooks::DoPrepareMusicType(RE::BSIMusicType* argMusicType)
 		return _DoPrepareMusicType(argMusicType);
 
 	auto musicType = static_cast<RE::BGSMusicType*>(argMusicType);
+	if (!musicType)
+	{
+		logger::critical("Cannot cast BSIMusicType to BGSMusicType, returning default Music Type!");
+		return _DoPrepareMusicType(argMusicType);
+	}
 	auto& ambienceSettings = FormHandler::GetSingleton()->AmbienceSettings;
 	auto it = ambienceSettings.find(musicType);
 	if (it != ambienceSettings.end() && !it->second)

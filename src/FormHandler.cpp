@@ -212,25 +212,10 @@ void FormHandler::InitializeAmbience()
 	const auto dataHandler = RE::TESDataHandler::GetSingleton();
 
 	silentTrack = dataHandler->LookupForm<RE::BGSMusicType>(0x1BA72, "Fallout4.esm");
+	if (!silentTrack)
+		logger::critical("Cannot find Silent Track in Fallout4.esm! Ambience will play.");
+
 	Ambience ambience = {
-		// Factions
-		// -- Fallout4.esm --
-		.factionInstitute = dataHandler->LookupForm<RE::BGSMusicType>(0xC9FD4, "Fallout4.esm"),
-		.factionBrotherhood = dataHandler->LookupForm<RE::BGSMusicType>(0xCF935, "Fallout4.esm"),
-		.factionRailroad = dataHandler->LookupForm<RE::BGSMusicType>(0xCF937, "Fallout4.esm"),
-		.factionMinutemen = dataHandler->LookupForm<RE::BGSMusicType>(0xD4C41, "Fallout4.esm"),
-		// -- DLCCoast.esm --
-		.dlc03FactionChildrenOfAtom = dataHandler->LookupForm<RE::BGSMusicType>(0x56654, "DLCCoast.esm"),
-		.dlc03FactionChildrenOfAtomNucleus = dataHandler->LookupForm<RE::BGSMusicType>(0x5D104, "DLCCoast.esm"),
-
-		// Dungeons and Interiors
-		// -- Fallout4.esm --
-		.dungeonA = dataHandler->LookupForm<RE::BGSMusicType>(0x2D4C2, "Fallout4.esm"),
-		.dungeonB = dataHandler->LookupForm<RE::BGSMusicType>(0x1D4A6D, "Fallout4.esm"),
-		.dungeonC = dataHandler->LookupForm<RE::BGSMusicType>(0x1D4A6E, "Fallout4.esm"),
-		// -- DLCRobot.esm --
-		.dlc01DungeonMechanistLair = dataHandler->LookupForm<RE::BGSMusicType>(0x100F0, "DLCRobot.esm"),
-
 		// Exploration and Exteriors
 		// -- Fallout4.esm --
 		.exploreRegular = dataHandler->LookupForm<RE::BGSMusicType>(0x1ED25, "Fallout4.esm"),
@@ -250,7 +235,25 @@ void FormHandler::InitializeAmbience()
 		.dlc04ExploreInnerGalactic = dataHandler->LookupForm<RE::BGSMusicType>(0x32969, "DLCNukaWorld.esm"),
 		.dlc04ExploreInnerSafari = dataHandler->LookupForm<RE::BGSMusicType>(0x378B6, "DLCNukaWorld.esm"),
 		.dlc04ExploreInnerKiddie = dataHandler->LookupForm<RE::BGSMusicType>(0x3B51B, "DLCNukaWorld.esm"),
-		.dlc04ExploreInnerNukaTown = dataHandler->LookupForm<RE::BGSMusicType>(0x3B51C, "DLCNukaWorld.esm")
+		.dlc04ExploreInnerNukaTown = dataHandler->LookupForm<RE::BGSMusicType>(0x3B51C, "DLCNukaWorld.esm"),
+
+		// Dungeons and Interiors
+		// -- Fallout4.esm --
+		.dungeonA = dataHandler->LookupForm<RE::BGSMusicType>(0x2D4C2, "Fallout4.esm"),
+		.dungeonB = dataHandler->LookupForm<RE::BGSMusicType>(0x1D4A6D, "Fallout4.esm"),
+		.dungeonC = dataHandler->LookupForm<RE::BGSMusicType>(0x1D4A6E, "Fallout4.esm"),
+		// -- DLCRobot.esm --
+		.dlc01DungeonMechanistLair = dataHandler->LookupForm<RE::BGSMusicType>(0x100F0, "DLCRobot.esm"),
+
+		// Factions
+		// -- Fallout4.esm --
+		.factionInstitute = dataHandler->LookupForm<RE::BGSMusicType>(0xC9FD4, "Fallout4.esm"),
+		.factionBrotherhood = dataHandler->LookupForm<RE::BGSMusicType>(0xCF935, "Fallout4.esm"),
+		.factionRailroad = dataHandler->LookupForm<RE::BGSMusicType>(0xCF937, "Fallout4.esm"),
+		.factionMinutemen = dataHandler->LookupForm<RE::BGSMusicType>(0xD4C41, "Fallout4.esm"),
+		// -- DLCCoast.esm --
+		.dlc03FactionChildrenOfAtom = dataHandler->LookupForm<RE::BGSMusicType>(0x56654, "DLCCoast.esm"),
+		.dlc03FactionChildrenOfAtomNucleus = dataHandler->LookupForm<RE::BGSMusicType>(0x5D104, "DLCCoast.esm")
 	};
 	MapAmbience(ambience);
 }
@@ -258,24 +261,6 @@ void FormHandler::InitializeAmbience()
 void FormHandler::MapAmbience(Ambience& ambience)
 {
 	// -- Fallout4.esm --
-	// Factions
-	if (ambience.factionInstitute)
-		AmbienceSettings.insert({ ambience.factionInstitute, Settings::bAmbienceInstitute });
-	if (ambience.factionBrotherhood)
-		AmbienceSettings.insert({ ambience.factionBrotherhood, Settings::bAmbienceBrotherhood });
-	if (ambience.factionRailroad)
-		AmbienceSettings.insert({ ambience.factionRailroad, Settings::bAmbienceRailroad });
-	if (ambience.factionMinutemen)
-		AmbienceSettings.insert({ ambience.factionMinutemen, Settings::bAmbienceMinutemen });
-	// Dungeons and Interiors
-	if (ambience.dungeonA)
-		AmbienceSettings.insert({ ambience.dungeonA, Settings::bAmbienceDungeon });
-	if (ambience.dungeonB)
-		AmbienceSettings.insert({ ambience.dungeonB, Settings::bAmbienceDungeon });
-	if (ambience.dungeonC)
-		AmbienceSettings.insert({ ambience.dungeonC, Settings::bAmbienceDungeon });
-	if (ambience.dungeonVault111)
-		AmbienceSettings.insert({ ambience.dungeonVault111, Settings::bAmbienceDungeon });
 	// Exploration and Exteriors
 	if (ambience.exploreRegular)
 		AmbienceSettings.insert({ ambience.exploreRegular, Settings::bAmbienceExplore });
@@ -293,18 +278,36 @@ void FormHandler::MapAmbience(Ambience& ambience)
 		AmbienceSettings.insert({ ambience.exploreCoastAirport, Settings::bAmbienceExplore });
 	if (ambience.exploreGlowingSea)
 		AmbienceSettings.insert({ ambience.exploreGlowingSea, Settings::bAmbienceGlowingSea });
+	// Dungeons and Interiors
+	if (ambience.dungeonA)
+		AmbienceSettings.insert({ ambience.dungeonA, Settings::bAmbienceDungeon });
+	if (ambience.dungeonB)
+		AmbienceSettings.insert({ ambience.dungeonB, Settings::bAmbienceDungeon });
+	if (ambience.dungeonC)
+		AmbienceSettings.insert({ ambience.dungeonC, Settings::bAmbienceDungeon });
+	if (ambience.dungeonVault111)
+		AmbienceSettings.insert({ ambience.dungeonVault111, Settings::bAmbienceDungeon });
+	// Factions
+	if (ambience.factionInstitute)
+		AmbienceSettings.insert({ ambience.factionInstitute, Settings::bAmbienceInstitute });
+	if (ambience.factionBrotherhood)
+		AmbienceSettings.insert({ ambience.factionBrotherhood, Settings::bAmbienceBrotherhood });
+	if (ambience.factionRailroad)
+		AmbienceSettings.insert({ ambience.factionRailroad, Settings::bAmbienceRailroad });
+	if (ambience.factionMinutemen)
+		AmbienceSettings.insert({ ambience.factionMinutemen, Settings::bAmbienceMinutemen });
 
 	// -- DLCRobot.esm --
 	if (ambience.dlc01DungeonMechanistLair)
 		AmbienceSettings.insert({ ambience.dlc01DungeonMechanistLair, Settings::bAmbienceDLC01Dungeon });
 
 	// -- DLCCoast.esm --
+	if (ambience.dlc03Explore)
+		AmbienceSettings.insert({ ambience.dlc03Explore, Settings::bAmbienceDLC03Explore });
 	if (ambience.dlc03FactionChildrenOfAtom)
 		AmbienceSettings.insert({ ambience.dlc03FactionChildrenOfAtom, Settings::bAmbienceDLC03ChildrenOfAtom });
 	if (ambience.dlc03FactionChildrenOfAtomNucleus)
 		AmbienceSettings.insert({ ambience.dlc03FactionChildrenOfAtomNucleus, Settings::bAmbienceDLC03ChildrenOfAtom });
-	if (ambience.dlc03Explore)
-		AmbienceSettings.insert({ ambience.dlc03Explore, Settings::bAmbienceDLC03Explore });
 
 	// -- DLCNukaWorld.esm --
 	if (ambience.dlc04ExploreOuter)
