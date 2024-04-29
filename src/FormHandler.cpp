@@ -253,7 +253,13 @@ void FormHandler::InitializeAmbience()
 		.factionMinutemen = dataHandler->LookupForm<RE::BGSMusicType>(0xD4C41, "Fallout4.esm"),
 		// -- DLCCoast.esm --
 		.dlc03FactionChildrenOfAtom = dataHandler->LookupForm<RE::BGSMusicType>(0x56654, "DLCCoast.esm"),
-		.dlc03FactionChildrenOfAtomNucleus = dataHandler->LookupForm<RE::BGSMusicType>(0x5D104, "DLCCoast.esm")
+		.dlc03FactionChildrenOfAtomNucleus = dataHandler->LookupForm<RE::BGSMusicType>(0x5D104, "DLCCoast.esm"),
+
+		// Compatibility
+		// Faded Glory
+		.fadedGloryVault88 = dataHandler->LookupForm<RE::BGSMusicType>(0x6B04, "Faded Glory - Soundtrack Expansion.esp"),
+		// Music Mods Merged - Faded Glory
+		.MMMfadedGloryVault88 = dataHandler->LookupForm<RE::BGSMusicType>(0x161E8, "MusicMergedDLC.esp")
 	};
 	MapAmbience(ambience);
 }
@@ -325,5 +331,19 @@ void FormHandler::MapAmbience(Ambience& ambience)
 	if (ambience.dlc04ExploreInnerNukaTown)
 		AmbienceSettings.insert({ ambience.dlc04ExploreInnerNukaTown, Settings::bAmbienceDLC04ExploreNukaTown });
 
+	// Compatibility
+	// Faded Glory. Don't insert if Music Mods Merged is installed.
+	if (ambience.fadedGloryVault88 && !ambience.MMMfadedGloryVault88)
+		AmbienceSettings.insert({ ambience.fadedGloryVault88, Settings::bAmbienceFadedGloryVault88 });
+	// Music Mods Merged - Faded Glory
+	if (ambience.MMMfadedGloryVault88)
+		AmbienceSettings.insert({ ambience.MMMfadedGloryVault88, Settings::bAmbienceFadedGloryVault88 });
+
 	logger::info("...Finished initializing Ambience Forms.");
+}
+
+bool FormHandler::CheckFileHasForm(int formID, std::string fileName)
+{
+	bool bFileHasForm = RE::TESDataHandler::GetSingleton()->LookupFormID(formID, fileName);
+	return bFileHasForm;
 }
