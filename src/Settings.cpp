@@ -17,7 +17,7 @@ void Settings::ReadIniSettings()
 		ReadBoolSetting(ini, "General", "bAmbienceEnabled", bAmbienceEnabled);
 
 		// Enemies
-		// -- Fallout4.esm + DLCRobot.esm --
+		// -- Fallout4.esm --
 		// Humanoids
 		ReadBoolSetting(ini, "Enemies", "bHuman", bHuman);
 		ReadBoolSetting(ini, "Enemies", "bSuperMutant", bSuperMutant);
@@ -40,10 +40,11 @@ void Settings::ReadIniSettings()
 		ReadBoolSetting(ini, "Enemies", "bProtectron", bProtectron);
 		ReadBoolSetting(ini, "Enemies", "bSentryBot", bSentryBot);
 		ReadBoolSetting(ini, "Enemies", "bMrHandy", bMrHandy);
-		ReadBoolSetting(ini, "Enemies", "bRobobrain", bRobobrain);
 		ReadBoolSetting(ini, "Enemies", "bEyebot", bEyebot);
 		ReadBoolSetting(ini, "Enemies", "bTurret", bTurret);
 		ReadBoolSetting(ini, "Enemies", "bSynth", bSynth);
+		// -- DLCRobot.esm --
+		ReadBoolSetting(ini, "Enemies", "bRobobrain", bRobobrain);
 		// -- DLCCoast.esm --
 		ReadBoolSetting(ini, "Enemies", "bAngler", bAngler);
 		ReadBoolSetting(ini, "Enemies", "bFogCrawler", bFogCrawler);
@@ -78,6 +79,10 @@ void Settings::ReadIniSettings()
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreSafari", bAmbienceDLC04ExploreSafari);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreKiddie", bAmbienceDLC04ExploreKiddie);
 		ReadBoolSetting(ini, "Ambience", "bAmbienceDLC04ExploreNukaTown", bAmbienceDLC04ExploreNukaTown);
+
+		// Compatibility
+		// Faded Glory. Includes Music Mods Merged.
+		ReadBoolSetting(ini, "Compatibility", "bAmbienceFadedGloryVault88", bAmbienceFadedGloryVault88);
 	};
 	// Read Defaults first
 	ReadSettingsIni(defaultini_path);

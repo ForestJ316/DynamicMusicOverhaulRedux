@@ -14,6 +14,7 @@ public:
 	static void InitializeForms();
 	void InitializeRaces();
 	void InitializeAmbience();
+	bool CheckFileHasForm(int formID, std::string fileName);
 	
 	// Silent Track
 	RE::BGSMusicType* silentTrack;
@@ -132,6 +133,13 @@ private:
 		// -- DLCCoast.esm --
 		RE::BGSMusicType* dlc03FactionChildrenOfAtom;
 		RE::BGSMusicType* dlc03FactionChildrenOfAtomNucleus;
+
+		// Compatibility
+		// Faded Glory
+		RE::BGSMusicType* fadedGloryVault88;
+		// Music Mods Merged - Faded Glory
+		RE::BGSMusicType* MMMfadedGloryVault88;
+
 	};
 	void MapAmbience(Ambience& ambience);
 	

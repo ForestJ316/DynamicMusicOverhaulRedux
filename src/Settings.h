@@ -12,7 +12,7 @@ public:
 	static inline bool bAmbienceEnabled = true;
 
 	// Enemies
-	// -- Fallout4.esm + DLCRobot.esm --
+	// -- Fallout4.esm --
 	// Humanoids
 	static inline bool bHuman = true;
 	static inline bool bSuperMutant = false;
@@ -36,9 +36,10 @@ public:
 	static inline bool bSentryBot = false;
 	static inline bool bAssaultron = true;
 	static inline bool bProtectron = false;
-	static inline bool bRobobrain = false;
 	static inline bool bTurret = false;
 	static inline bool bSynth = true;
+	// -- DLCRobot.esm -- 
+	static inline bool bRobobrain = false;
 	// -- DLCCoast.esm --
 	static inline bool bAngler = true;
 	static inline bool bFogCrawler = true;
@@ -73,4 +74,8 @@ public:
 	static inline bool bAmbienceDLC04ExploreSafari = true;
 	static inline bool bAmbienceDLC04ExploreKiddie = true;
 	static inline bool bAmbienceDLC04ExploreNukaTown = true;
+
+	// Compatibility
+	// Faded Glory. Includes Music Mods Merged.
+	static inline bool bAmbienceFadedGloryVault88 = true;
 };

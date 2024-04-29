@@ -18,7 +18,7 @@
   "pages": [
     {
       "pageDisplayName": "Combat Settings",
-      "content":[
+      "content": [
         {
           "text": "Combat Settings",
           "type": "section"
@@ -26,11 +26,6 @@
         {
           "text": "Choose which Enemies should play Combat Music.",
           "type": "text"
-        },
-        {
-          "text": "<i>If you don't own the DLC the setting will be ignored.</i>",
-          "type": "text",
-          "html": true
         },
         {
           "id": "bCombatEnabled:General",
@@ -42,11 +37,10 @@
             "sourceType": "ModSettingBool"
           }
         },
-        { "type": "spacer" },
         {
-          "text": "<p align='center'><font size='24'><b>- Main Game and Automatron DLC -</b></font></p>",
+          "text": "<b>Main Game</b>",
+          "type": "section",
           "html": true,
-          "type": "text",
           "groupCondition": 1
         },
         {
@@ -252,16 +246,6 @@
           }
         },
         {
-          "id": "bRobobrain:Enemies",
-          "text": "Robobrains",
-          "type": "switcher",
-          "help": "Enable combat music for Robobrains.",
-          "groupCondition": 1,
-          "valueOptions": {
-            "sourceType": "ModSettingBool"
-          }
-        },
-        {
           "id": "bEyebot:Enemies",
           "text": "Eyebots",
           "type": "switcher",
@@ -292,17 +276,51 @@
           }
         },
         {
-          "text": "<p align='center'><font size='24'><b>- Far Harbor DLC -</b></font></p>",
+          "id": "bAutomatronActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Automatron DLC",
+          "groupControl": 2,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<b>Automatron DLC</b>",
           "html": true,
-          "type": "text",
-          "groupCondition": 1
+          "type": "section",
+          "groupCondition": {"AND": [1,2]}
+        },
+        {
+          "id": "bRobobrain:Enemies",
+          "text": "Robobrains",
+          "type": "switcher",
+          "help": "Enable combat music for Robobrains.",
+          "groupCondition": {"AND": [1,2]},
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "id": "bFarHarborActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Far Harbor DLC",
+          "groupControl": 3,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<b>Far Harbor DLC</b>",
+          "html": true,
+          "type": "section",
+          "groupCondition": {"AND": [1,3]}
         },
         {
           "id": "bAngler:Enemies",
           "text": "Anglers",
           "type": "switcher",
           "help": "Enable combat music for Anglers.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -312,7 +330,7 @@
           "text": "Fog Crawlers",
           "type": "switcher",
           "help": "Enable combat music for Fog Crawlers.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -322,7 +340,7 @@
           "text": "Hermit Crabs",
           "type": "switcher",
           "help": "Enable combat music for Hermit Crabs.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -332,23 +350,32 @@
           "text": "Gulpers",
           "type": "switcher",
           "help": "Enable combat music for Gulpers.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
         },
         {
-          "text": "<p align='center'><font size='24'><b>- Nuka-World DLC -</b></font></p>",
+          "id": "bNukaWorldActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Nuka-World DLC",
+          "groupControl": 4,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<b>Nuka-World DLC</b>",
           "html": true,
-          "type": "text",
-          "groupCondition": 1
+          "type": "section",
+          "groupCondition": {"AND": [1,4]}
         },
         {
           "id": "bBloodworm:Enemies",
           "text": "Bloodworms",
           "type": "switcher",
           "help": "Enable combat music for Bloodworms.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -358,7 +385,7 @@
           "text": "Cave Crickets",
           "type": "switcher",
           "help": "Enable combat music for Cave Crickets.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -368,7 +395,7 @@
           "text": "Rad Rats",
           "type": "switcher",
           "help": "Enable combat music for Rad Rats.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -378,7 +405,7 @@
           "text": "Rad Ants",
           "type": "switcher",
           "help": "Enable combat music for Rad Ants.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -388,7 +415,7 @@
           "text": "Gatorclaws",
           "type": "switcher",
           "help": "Enable combat music for Gatorclaws.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -398,15 +425,12 @@
           "text": "Gorillas",
           "type": "switcher",
           "help": "Enable combat music for Gorillas.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
         },
-        {
-          "type": "spacer",
-          "groupCondition": 1
-        }
+        { "type": "spacer" }
       ]
     },
     {
@@ -421,11 +445,6 @@
           "type": "text"
         },
         {
-          "text": "<i>If you don't own the DLC the setting will be ignored.</i>",
-          "type": "text",
-          "html": true
-        },
-        {
           "id": "bAmbienceEnabled:General",
           "text": "Mod Enabled for Ambience",
           "type": "switcher",
@@ -435,11 +454,10 @@
             "sourceType": "ModSettingBool"
           }
         },
-        { "type": "spacer" },
         {
-          "text": "<p align='center'><font size='24'><b>- Main Game -</b></font></p>",
+          "text": "<b>Main Game</b>",
           "html": true,
-          "type": "text",
+          "type": "section",
           "groupCondition": 1
         },
         {
@@ -511,35 +529,53 @@
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
-        },        
+        },
         {
-          "text": "<p align='center'><font size='24'><b>- Automatron DLC -</b></font></p>",
+          "id": "bAutomatronActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Automatron DLC",
+          "groupControl": 2,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },    
+        {
+          "text": "<b>Automatron DLC</b>",
           "html": true,
-          "type": "text",
-          "groupCondition": 1
+          "type": "section",
+          "groupCondition": {"AND": [1,2]}
         },
         {
           "id": "bAmbienceDLC01Dungeon:Ambience",
           "text": "The Mechanist's lair",
           "type": "switcher",
           "help": "Enable The Mechanist's lair related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,2]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
         },
         {
-          "text": "<p align='center'><font size='24'><b>- Far Harbor DLC -</b></font></p>",
+          "id": "bFarHarborActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Far Harbor DLC",
+          "groupControl": 3,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },  
+        {
+          "text": "<b>Far Harbor DLC</b>",
           "html": true,
-          "type": "text",
-          "groupCondition": 1
+          "type": "section",
+          "groupCondition": {"AND": [1,3]}
         },
         {
           "id": "bAmbienceDLC03Explore:Ambience",
           "text": "Far Harbor General Ambience",
           "type": "switcher",
           "help": "Enable Far Harbor related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -549,23 +585,32 @@
           "text": "Children of Atom",
           "type": "switcher",
           "help": "Enable Children of Atom faction related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,3]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
         },
         {
-          "text": "<p align='center'><font size='24'><b>- Nuka-World DLC -</b></font></p>",
+          "id": "bNukaWorldActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Nuka-World DLC",
+          "groupControl": 4,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },  
+        {
+          "text": "<b>Nuka-World DLC</b>",
           "html": true,
-          "type": "text",
-          "groupCondition": 1
+          "type": "section",
+          "groupCondition": {"AND": [1,4]}
         },
         {
           "id": "bAmbienceDLC04Explore:Ambience",
           "text": "Nuka-World General Ambience",
           "type": "switcher",
           "help": "Enable Nuka-World related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -575,7 +620,7 @@
           "text": "Dry Rock Gulch",
           "type": "switcher",
           "help": "Enable Nuka-World Dry Rock Gulch related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -585,7 +630,7 @@
           "text": "Galactic Zone",
           "type": "switcher",
           "help": "Enable Nuka-World Galactic Zone related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -595,7 +640,7 @@
           "text": "Safari Adventure",
           "type": "switcher",
           "help": "Enable Nuka-World Safari Adventure related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -605,7 +650,7 @@
           "text": "Kiddie Kingdom",
           "type": "switcher",
           "help": "Enable Nuka-World Kiddie Kingdom related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -615,15 +660,64 @@
           "text": "Nuka-Town USA",
           "type": "switcher",
           "help": "Enable Nuka-World Nuka-Town USA related ambience.",
-          "groupCondition": 1,
+          "groupCondition": {"AND": [1,4]},
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        { "type": "spacer" }
+      ]
+    },
+    {
+      "pageDisplayName": "Mod Compatibility",
+      "content": [
+        {
+          "text": "Compatibility Settings",
+          "type": "section"
+        },
+        {
+          "text": "Control settings related to incompatible-by-default mods.",
+          "type": "text"
+        },
+        {
+          "text": "Any incompatible mods that have a setting will be shown here.",
+          "type": "text"
+        },
+        {
+          "id": "bFadedGloryActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Faded Glory",
+          "groupControl": 1,
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
         },
         {
-          "type": "spacer",
-          "groupCondition": 1
-        }
+          "id": "bMusicMergedActive:Compatibility",
+          "type": "hiddenSwitcher",
+          "text": "Hidden Switcher for Music Mods Merged - Faded Glory",
+          "groupControl": 2,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "<b>Faded Glory - A Post-Apocalyptic Soundscape</b>",
+          "type": "section",
+          "html": true,
+          "groupCondition": {"OR": [1,2]}
+        },
+        {
+          "id": "bAmbienceFadedGloryVault88:Compatibility",
+          "text": "Vault 88",
+          "type": "switcher",
+          "help": "Enable Vault 88 related ambience.",
+          "groupCondition": {"OR": [1,2]},
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        { "type": "spacer" }
       ]
     }
   ]
