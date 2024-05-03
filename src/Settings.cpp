@@ -88,6 +88,7 @@ void Settings::ReadIniSettings()
 	ReadSettingsIni(defaultini_path);
 	ReadSettingsIni(userini_path);
 
+	// If MCM updated in combat
 	if (RE::PlayerCharacter::GetSingleton()->IsInCombat() && bCombatEnabled)
 		Events::CombatEvent::GetSingleton()->UpdateCombatants();
 }
