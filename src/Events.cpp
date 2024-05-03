@@ -35,9 +35,14 @@ namespace Events
 					auto a_source = a_event.sourceActor->As<RE::Actor>();
 					auto& enemySettings = FormHandler::GetSingleton()->EnemySettings;
 					auto it = enemySettings.find(a_source->race);
+					// Case for custom ghouls. If going to start checking classes then perhaps do a struct for enemySettings key
+					auto enemyClass = a_source->GetNPC()->cl;
 					// Default true for unspecified races
-					if ((it != enemySettings.end() && it->second) || it == enemySettings.end())
-						CombatantList[a_sourceHandle] = { ACTOR_COMBAT_STATE::kCombat, true};
+					if ((it != enemySettings.end() && it->second) || (it == enemySettings.end() && enemyClass != FormHandler::GetSingleton()->ghoulClass)
+						|| (enemyClass == FormHandler::GetSingleton()->ghoulClass && Settings::bGhoul))
+					{
+						CombatantList[a_sourceHandle] = { ACTOR_COMBAT_STATE::kCombat, true };
+					}
 				}
 				// Enemy that is searching is invalid for combat music
 				else if (a_event.newState == ACTOR_COMBAT_STATE::kSearching)
@@ -47,6 +52,7 @@ namespace Events
 		return CombatEvent::EventResult::kContinue;
 	}
 
+	// If MCM settings got changed in combat
 	void CombatEvent::UpdateCombatants()
 	{
 		auto& enemySettings = FormHandler::GetSingleton()->EnemySettings;
@@ -57,10 +63,16 @@ namespace Events
 			{
 				auto a_enemy = a_enemyRefr->As<RE::Actor>();
 				auto musicSetting = enemySettings.find(a_enemy->race);
+				auto enemyClass = a_enemy->GetNPC()->cl;
 				if (musicSetting != enemySettings.end() && it->second.combatState == ACTOR_COMBAT_STATE::kCombat && it->second.playMusic != musicSetting->second)
 				{
 					it->second.playMusic = musicSetting->second;
 				}
+				// Case for custom Ghouls.
+				else if (enemyClass == FormHandler::GetSingleton()->ghoulClass && it->second.combatState == ACTOR_COMBAT_STATE::kCombat && Settings::bGhoul != it->second.playMusic)
+				{
+					it->second.playMusic = Settings::bGhoul;
+				}	
 			}
 		}
 	}

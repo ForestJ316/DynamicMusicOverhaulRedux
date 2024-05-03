@@ -18,6 +18,7 @@ public:
 	
 	// Silent Track
 	RE::BGSMusicType* silentTrack;
+	RE::TESClass* ghoulClass;
 
 private:
 	struct Races

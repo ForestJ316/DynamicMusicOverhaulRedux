@@ -12,6 +12,8 @@ void FormHandler::InitializeRaces()
 	logger::info("Initializing Race Forms...");
 	const auto dataHandler = RE::TESDataHandler::GetSingleton();
 
+	// Ghoul Class
+	ghoulClass = dataHandler->LookupForm<RE::TESClass>(0x123E16, "Fallout4.esm");
 	Races races = {
 		// -- Fallout4.esm + DLCRobot.esm --
 		// Humanoids
