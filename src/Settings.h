@@ -21,6 +21,7 @@ public:
 	// Creatures
 	static inline bool bMolerat = false;
 	static inline bool bBloodbug = false;
+	static inline bool bBloatfly = false;
 	static inline bool bRadroach = false;
 	static inline bool bStingwing = false;
 	static inline bool bRadscorpion = true;

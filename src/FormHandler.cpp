@@ -108,6 +108,8 @@ void FormHandler::MapRaces(Races& races)
 		EnemySettings.insert({ races.molerat, Settings::bMolerat });
 	if (races.bloodbug)
 		EnemySettings.insert({ races.bloodbug, Settings::bBloodbug });
+	if (races.bloatfly)
+		EnemySettings.insert({ races.bloatfly, Settings::bBloatfly });
 	if (races.radroach)
 		EnemySettings.insert({ races.radroach, Settings::bRadroach });
 	if (races.stingwing)
