@@ -110,6 +110,16 @@
           }
         },
         {
+          "id": "bBloatfly:Enemies",
+          "text": "Bloatflies",
+          "type": "switcher",
+          "help": "Enable combat music for Bloatflies.",
+          "groupCondition": 1,
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
           "id": "bRadroach:Enemies",
           "text": "Radroaches",
           "type": "switcher",

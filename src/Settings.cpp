@@ -26,6 +26,7 @@ void Settings::ReadIniSettings()
 		// Creatures
 		ReadBoolSetting(ini, "Enemies", "bMolerat", bMolerat);
 		ReadBoolSetting(ini, "Enemies", "bBloodbug", bBloodbug);
+		ReadBoolSetting(ini, "Enemies", "bBloatfly", bBloatfly);
 		ReadBoolSetting(ini, "Enemies", "bRadroach", bRadroach);
 		ReadBoolSetting(ini, "Enemies", "bStingwing", bStingwing);
 		ReadBoolSetting(ini, "Enemies", "bRadscorpion", bRadscorpion);
